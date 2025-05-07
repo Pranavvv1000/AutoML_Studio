@@ -195,9 +195,8 @@ def run_flask_app():
     app.run(port=8000)
 
 if __name__ == "__main__":
-    
+    app.run(host='0.0.0.0', port=10000)
+
     for file_name, port, _ in apps:
         threading.Thread(target=run_app, args=(file_name, port)).start()
-
-   
     run_flask_app()
